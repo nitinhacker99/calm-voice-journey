@@ -49,6 +49,25 @@ const Index = () => {
     }, 2000);
   };
 
+  const handleFeatureClick = (feature: string) => {
+    switch (feature) {
+      case 'chat':
+        navigate('/chat');
+        break;
+      case 'journal':
+        navigate('/journal');
+        break;
+      case 'mood-history':
+        navigate('/mood-history');
+        break;
+      case 'emergency':
+        navigate('/emergency');
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-lavender-50 via-teal-50 to-sage-50">
       {/* Navigation */}
@@ -152,7 +171,10 @@ const Index = () => {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform">
+          <Card 
+            className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform cursor-pointer"
+            onClick={() => handleFeatureClick('chat')}
+          >
             <CardContent className="p-6">
               <MessageCircle className="h-12 w-12 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold text-gray-800 mb-2">AI Chat Support</h3>
@@ -160,7 +182,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform">
+          <Card 
+            className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform cursor-pointer"
+            onClick={() => handleFeatureClick('journal')}
+          >
             <CardContent className="p-6">
               <BookOpen className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold text-gray-800 mb-2">Digital Journal</h3>
@@ -168,7 +193,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform">
+          <Card 
+            className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform cursor-pointer"
+            onClick={() => handleFeatureClick('mood-history')}
+          >
             <CardContent className="p-6">
               <BarChart3 className="h-12 w-12 text-blue-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold text-gray-800 mb-2">Mood Tracking</h3>
@@ -176,7 +204,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform">
+          <Card 
+            className="text-center hover:shadow-lg transition-shadow border-0 bg-white/70 backdrop-blur-sm group hover:scale-105 transform transition-transform cursor-pointer"
+            onClick={() => handleFeatureClick('emergency')}
+          >
             <CardContent className="p-6">
               <Users className="h-12 w-12 text-green-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold text-gray-800 mb-2">Crisis Support</h3>
