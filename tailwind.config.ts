@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,43 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Therapeutic color palette
+				lavender: {
+					50: '#faf7ff',
+					100: '#f4edff',
+					200: '#ebe0ff',
+					300: '#d9c4ff',
+					400: '#c49eff',
+					500: '#a855f7',
+					600: '#9333ea',
+					700: '#7c2d12',
+					800: '#5b1a5b',
+					900: '#4c1d95'
+				},
+				teal: {
+					50: '#f0fdfa',
+					100: '#ccfbf1',
+					200: '#99f6e4',
+					300: '#5eead4',
+					400: '#2dd4bf',
+					500: '#14b8a6',
+					600: '#0d9488',
+					700: '#0f766e',
+					800: '#115e59',
+					900: '#134e4a'
+				},
+				sage: {
+					50: '#f6f7f6',
+					100: '#e3e8e3',
+					200: '#c7d2c7',
+					300: '#9fb09f',
+					400: '#728972',
+					500: '#56705b',
+					600: '#435947',
+					700: '#37483a',
+					800: '#2d3b30',
+					900: '#253229'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +122,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out'
 			}
 		}
 	},
